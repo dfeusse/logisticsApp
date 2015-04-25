@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+    <title> alerts </title>
+		<script type="text/javascript" src="../js/d3.v3/d3.v3.min.js"></script>
+        <link href="../roa/foundation-5.0.2/css/foundation.min.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <style type="text/css"></style>
+    </head>
+    <body>
+
+    <div id="main-header" class="row full-width">
+        <div class="large-9 columns">
+            <!-- <div class="main-title-container">
+                <span class="main-title"> command center </span> 
+            </div> -->
+            <div class="walmartlogo">
+                <img src="../img/GCIA.png" class="walmartlogo">
+            </div>
+        </div>
+        <div class="large-3 columns">
+            <div>
+                <img src="../img/NetBase2.png" class="netbaselogo">
+            </div>
+        </div>
+    </div>
+<!--
+    <div class="row full-width">
+        <div class="large-12 columns">
+            <span class="main-vis-header">
+                alerts
+            </span>
+        </div>
+    </div>
+-->
+    <div class="row full-width">
+        <div class="large-4 columns">
+            <div class="vis-title-header">
+                <span class="alert-header">
+                    topic 01
+                </span>
+                <!--
+                <span class="magnitude-header">
+                    5.2x
+                </span>
+                -->
+            </div>
+            <div id="top-magnitude-node" class="node-visual"></div>
+                <div class="row">
+                    <div class="large-4 columns">
+                        <div class="vis-metric-title-header">
+                            <span class="alert-metric-header">
+                                mentions
+                            </span>
+                            <br>
+                            <span class="alert-metric-value">
+                                610,429
+                            </span>
+                            <!--
+                            <span class="magnitude-header">
+                                5.2x
+                            </span>
+                            -->
+                        </div>
+                       
+                    </div>
+
+                    <div class="large-4 columns">
+                        <div class="vis-metric-title-header">
+                            <span class="alert-metric-header">
+                                impressions
+                            </span>
+                            <span class="alert-metric-value">
+                                2,874,903
+                            </span>
+                            <!--
+                            <span class="magnitude-header">
+                                5.2x
+                            </span>
+                            -->
+                        </div>
+                      
+                    </div>
+
+                    <div class="large-4 columns">
+                        <div class="vis-metric-title-header">
+                            <span class="alert-metric-header">
+                                duration
+                            </span>
+                            <br>
+                            <span class="alert-metric-value">
+                                1 day
+                            </span>
+                            <!--
+                            <span class="magnitude-header">
+                                5.2x
+                            </span>
+                            -->
+                        </div>
+                        
+                    </div>
+                </div>
+                <div id="lineChartVisual" class="row">
+                    <div class="large-12 columns">
+                        <span class="alert-metric-header">
+                            time
+                        </span>
+                        
+                        <p id="example">
+                    </div>
+                </div>
+        </div>
+
+        <div class="large-4 columns">
+            <div class="vis-title-header">
+                <span class="alert-header">
+                    topic 02
+                </span>
+                <!--
+                <span class="magnitude-header">
+                    5.2x
+                </span>
+                -->
+            </div>
+             <div id="second-magnitude-node" class="node-visual"></div>
+        </div>
+
+        <div class="large-4 columns">
+            <div class="vis-title-header">
+                <span class="alert-header">
+                    topic 03
+                </span>
+                <!--
+                <span class="magnitude-header">
+                    5.2x
+                </span>
+                -->
+            </div>
+             <div id="third-magnitude-node" class="node-visual"></div>
+        </div>
+    </div>
+<!--
+    <div class="row full-width">
+        <div class="large-4 columns">
+            <div class="vis-title-header">
+                <span class="alert-header">
+                    topic 01
+                </span>
+        
+                <span class="magnitude-header">
+                    5.2x
+                </span>
+
+            </div>
+           
+        </div>
+
+        <div class="large-4 columns">
+            <div class="vis-title-header">
+                <span class="alert-header">
+                    topic 02
+                </span>
+        
+                <span class="magnitude-header">
+                    5.2x
+                </span>
+         
+            </div>
+          
+        </div>
+
+        <div class="large-4 columns">
+            <div class="vis-title-header">
+                <span class="alert-header">
+                    topic 03
+                </span>
+      
+                <span class="magnitude-header">
+                    5.2x
+                </span>
+         
+            </div>
+            
+        </div>
+    </div>
+    -->
+<!--
+    <div id="main-header" class="row full-width">
+        <div class="large-4 columns">
+            <div class="vis-title-header">
+                <span class="vis-header">
+                Magnitude of emerging topics
+                </span>
+            </div>
+        </div>
+        <div class="large-3 columns">
+            <div class="vis-title-header">
+                <span class="vis-header">
+                    length of alert
+                </span>
+            </div>
+        </div>
+        <div class="large-5 columns">
+            <div class="vis-title-header">
+                <span class="vis-header">
+                    mentions
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="alert-topic-container" class="row full-width">
+        <div class="large-2 columns">
+            <div class="topic-data">
+                <div class="topic-header">
+                    <span class="vis-header"> 
+                        xbox 
+                    </span>
+                </div>
+                <div class="topic-value">
+                    <span class="topic-mentions"> 1,362,936 mentions </span>
+                </div>
+                <span class="topic-magnitude">5.2x</span>
+            </div>
+        </div>
+        <div id="node-container" class="large-2 columns">
+            <div id="top-magnitude-node" class="node-visual"></div>
+        </div>
+        <div class="large-3 columns">
+            <div id="line-one"></div>
+        </div>
+        <div class="large-5 columns">
+            <div id="tweets"></div>
+        </div>
+    </div>
+
+    <div id="alert-topic-container" class="row full-width">
+        <div class="large-2 columns">
+            <div class="topic-data">
+                <div class="topic-header">
+                    <span class="vis-header"> long lines </span>
+                </div>
+                <div class="topic-value">
+                    <span class="topic-mentions"> 3,715,277 mentions </span>
+                </div>
+                <span class="topic-magnitude">2.7x</span>
+            </div>
+        </div>
+        <div id="node-container" class="large-4 columns">
+            <div id="second-magnitude-node" class="node-visual"></div>
+        </div>
+        <div class="large-6 columns">
+            <span class="sub-vis-header"></span>
+        </div>
+    </div>
+
+    <div id="alert-topic-container" class="row full-width">
+        <div class="large-2 columns">
+            <div class="topic-data">
+                <div class="topic-header">
+                    <span class="vis-header"> spoiled meat </span>
+                </div>
+                <div class="topic-value">
+                    <span class="topic-mentions"> 776,902 mentions </span>
+                </div>
+                <span class="topic-magnitude">1.3x</span>
+            </div>
+        </div>
+        <div id="node-container" class="large-4 columns">
+            <div id="third-magnitude-node" class="node-visual"></div>
+        </div>
+        <div class="large-6 columns">
+            <span class="sub-vis-header"></span>
+        </div>
+    </div>
+
+    <div id="alert-topic-container" class="row full-width">
+        <div class="large-2 columns">
+            h
+        </div>
+        <div id="node-container" class="large-4 columns">
+            <div id="avg-magnitude-node" class="node-visual"></div>
+            <span class="topic-mentions"> average mentions of topic </span>
+        </div>
+        <div class="large-6 columns">
+            <span class="sub-vis-header"></span>
+
+        </div>
+    </div>
+-->
+
+
+    <script src="nodes/node01.js"></script>
+    <script src="nodes/node02.js"></script>
+    <script src="nodes/node03.js"></script>
+    <script src="nodes/trend01.js"></script>
+    <script src="nodes/trend02.js"></script>
+    <script src="avgLineChart/line.js"></script>
+     <script src="poneLine.js"></script>
+    <!-- <script src="nodes/node03.js"></script>
+    <script src="nodes/node_avg.js"></script>
+    <script src="lines/line01.js"></script>
+    <script src="text/text01.js"></script> -->
+    </body>
+</html>

@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Logistics Prototype </title>
+		<!-- CSS -->
+		<link href="static/bower_components/select2/select2.css" rel="stylesheet" />
+		<link href="static/css/ng-table.0.3.0.css" rel="stylesheet" />
+        <link href="static/css/angular.rangeSlider.css" rel="stylesheet">
+        <link href="static/css/bootstrap-multiselect.css" rel="stylesheet">
+        <link href="static/css/font-awesome.min.css" rel="stylesheet" />
+		<link href="static/css/bootstrap.min.3.2.0.css" rel="stylesheet" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+		<!-- Dashboard CSS -->
+		<link href="static/font-awesome/css/font-awesome.css" rel="stylesheet" />
+		<link href="static/css/style-dashboardSkeleton.css" rel="stylesheet">
+		<link href="static/css/style-responsive.css" rel="stylesheet">
+		<!-- My CSS -->
+		<link href="app/vis.css" rel="stylesheet" />
+
+		<style type="text/css">
+			body {
+				background:#111111;
+				/* background: #4b4b4b; */
+			}
+			.header {
+				/* background:#68dff0 
+				background: #e6e6e6; */
+				background: white;
+			}
+			#sidebar {
+				background: #4b4b4b;
+				border-right-style: solid;
+    			border-right-color: #323232;
+    			border-right-width: 3px;
+			}
+			.black-bg {
+			    border-bottom: 1px solid #323232;
+			}
+			a.logo {
+				color: #4b4b4b;
+				/* color: #ea1e24; */
+			}
+		</style>
+	</head>
+	<body ng-app="myApp">
+		
+		<section id="container" >
+	  	<!-- ***********************************************************************************	***********************************************************************
+	  	TOP BAR CONTENT & NOTIFICATIONS
+	  	****************************************************************************************	******************************************************************* -->
+	  	<!--header start-->
+	  	<header class="header black-bg">
+			<div class="sidebar-toggle-box">
+				<div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+			</div>
+			<!--logo start-->
+			<img src="static/img/bowie/noun_21660_cc.svg" style="float:left;width:60px">
+			<a href="index.html" class="logo"><b>Thunder Data Labs</b></a>
+			<!--logo end-->
+		</header>
+	  	<!--header end-->
+	  
+	  	<!-- **********************************************************************************************************************************************************
+	  	MAIN SIDEBAR MENU
+	  	*********************************************************************************************************************************************************** -->
+	  	<!--sidebar start-->
+	  	<aside>
+		  	<div id="sidebar"  class="nav-collapse ">
+			  <!-- sidebar menu start-->
+			  <ul class="sidebar-menu" id="nav-accordion">
+			  
+				  <p class="centered"><a href="profile.html"><img src="static/img/woodruff.png" class="img-circle" width="100"></a></p>
+				  <h5 class="centered">Dave Wooderson<br>Property Manager</h5>
+					
+				  <li class="mt">
+					  <a class="active" href="index.html">
+						  <i class="fa fa-dashboard"></i>
+						  <span>Dashboard</span>
+					  </a>
+				  </li>
+				  <li class="sub-menu">
+					  <a href="table.html" >
+						  <i class="fa fa-th"></i>
+						  <span>Data Tables</span>
+					  </a>
+					  <!--
+					  <ul class="sub">
+						  <li><a  href="basic_table.html">Basic Table</a></li>
+						  <li><a  href="responsive_table.html">Responsive Table</a></li>
+					  </ul>
+					-->
+				  </li>
+			<!--
+				  <li class="sub-menu">
+					  <a href="javascript:;" >
+						  <i class="fa fa-desktop"></i>
+						  <span>UI Elements</span>
+					  </a>
+					  <ul class="sub">
+						  <li><a  href="general.html">General</a></li>
+						  <li><a  href="buttons.html">Buttons</a></li>
+						  <li><a  href="panels.html">Panels</a></li>
+					  </ul>
+				  </li>
+
+				  <li class="sub-menu">
+					  <a href="javascript:;" >
+						  <i class="fa fa-cogs"></i>
+						  <span>Components</span>
+					  </a>
+					  <ul class="sub">
+						  <li><a  href="calendar.html">Calendar</a></li>
+						  <li><a  href="gallery.html">Gallery</a></li>
+						  <li><a  href="todo_list.html">Todo List</a></li>
+					  </ul>
+				  </li>
+			-->
+				  <li class="sub-menu">
+					  <a href="javascript:;" >
+						  <i class="fa fa-book"></i>
+						  <span>Extra Pages</span>
+					  </a>
+					  <ul class="sub">
+						  <li><a  href="blank.html">Blank Page</a></li>
+						  <li><a  href="login.html">Login</a></li>
+						  <li><a  href="lock_screen.html">Lock Screen</a></li>
+					  </ul>
+				  </li>
+				  <li class="sub-menu">
+					  <a href="javascript:;" >
+						  <i class="fa fa-tasks"></i>
+						  <span>Forms</span>
+					  </a>
+					  <ul class="sub">
+						  <li><a  href="form_component.html">Form Components</a></li>
+					  </ul>
+				  </li>
+				  
+				  <li class="sub-menu">
+					  <a href="javascript:;" >
+						  <i class=" fa fa-bar-chart-o"></i>
+						  <span>Charts</span>
+					  </a>
+					  <ul class="sub">
+						  <li><a  href="morris.html">Morris</a></li>
+						  <li><a  href="chartjs.html">Chartjs</a></li>
+					  </ul>
+				  </li>
+
+			  </ul>
+			  <!-- sidebar menu end-->
+		  </div>
+	  </aside>
+	  <!--sidebar end-->
+	  
+	<!-- **********************************************************************************************************************************************************
+	MAIN CONTENT
+	********************************************************************************************************************************************************** -->
+	<!--main content start-->
+	<section id="main-content">
+		<section class="wrapper">
+
+			<div class="row">
+				 
+				<div class="main" ng-controller="MainController">
+					<div class="container">
+						<div class="row marketing">
+							<div class="container">
+								<div class="col-md-4">
+								<!-- FIRST THIRD -->
+									<div class="vis-title-header">
+						                <span class="alert-header">
+						                    warehouse 01
+						                </span>
+						                <!--
+						                <span class="magnitude-header">
+						                    5.2x
+						                </span>
+						                -->
+						            </div>
+						            <div id="top-magnitude-node" class="node-visual"></div>
+					  			</div>
+					  			<div class="col-md-4">
+					  				<!-- SECOND THIRD -->
+					  				<div class="vis-title-header">
+						                <span class="alert-header">
+						                    warehouse 02
+						                </span>
+						                <!--
+						                <span class="magnitude-header">
+						                    5.2x
+						                </span>
+						                -->
+						            </div>
+						            <div id="second-magnitude-node" class="node-visual"></div>
+					  			</div>
+					  			<div class="col-md-4">
+					  				<!-- THIRD THIRD -->
+					  				<div class="vis-title-header">
+						  				<span class="alert-header">
+						                    warehouse 03
+						                </span>
+						                <!--
+						                <span class="magnitude-header">
+						                    5.2x
+						                </span>
+						                -->
+					            	</div>
+					            	<div id="third-magnitude-node" class="node-visual"></div>
+					  			</div>
+					  		</div>
+					  	</div>
+			  		</div>
+			  	</div>
+			</div>
+		</section>
+	</section>
+
+	  <!--main content end-->
+	  <!--footer start-->
+	  <!--
+	  <footer class="site-footer">
+		  <div class="text-center">
+			  2015 - Thunder Inc
+			  <a href="index.html#" class="go-top">
+				  <i class="fa fa-angle-up"></i>
+			  </a>
+		  </div>
+	  </footer>
+	-->
+	  <!--footer end-->
+  </section>
+
+
+		<!-- JS placed at the end of the document so the pages load faster -->
+		<!-- Include the AngularJS library -->
+		<script src="static/js/angular.min.js"></script>
+		<!-- Other JS -->
+		<script src="static/js/jquery-2.0.3.min.js"></script>
+        <script src="static/bower_components/select2/select2.js"></script>
+        <script src="static/bower_components/angular-ui-select2/src/select2.js"></script>
+        <script src="static/js/angular-resource.min.js"></script>
+        <script src="static/js/ui-bootstrap-tpls-0.10.0.js"></script>
+        <script src="static/js/angular.rangeSlider.js"></script>
+        <script src="static/js/bootstrap-multiselect.js"></script>
+        <script src="static/js/ng-table.0.3.0.js"></script>
+
+        <!-- Dashboard Skeleton JS -->
+        <script src="static/js/d3.v3/d3.v3.min.js"></script>
+        <script src="static/js/dashboard/jquery.js"></script>
+		<script src="static/js/dashboard/jquery-1.8.3.min.js"></script>
+		<script src="static/js/dashboard/bootstrap.min.js"></script>
+		<script class="include" type="text/javascript" src="static/js/dashboard/jquery.dcjqaccordion.2.7.js"></script>
+		<script src="static/js/dashboard/jquery.scrollTo.min.js"></script>
+		<script src="static/js/dashboard/jquery.nicescroll.js" type="text/javascript"></script>
+		<!--common script for all pages-->
+		<script src="static/js/dashboard/common-scripts.js"></script>
+		</script>
+        <!-- ..................... -->
+
+        <!-- D3 -->
+        <script src="static/oldAlertVisWork/nodes/thisAppNode01.js"></script>
+    	<script src="static/oldAlertVisWork/nodes/thisAppNode02.js"></script>
+    	<script src="static/oldAlertVisWork/nodes/thisAppNode03.js"></script>
+
+		<!-- Modules -->
+		<!-- <script src="app/app.js"></script> -->
+
+		<!-- Controllers -->
+		<!-- <script src="app/mainController.js"></script> -->
+
+	</body>
+</html>

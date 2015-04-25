@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title> line chart </title>
+	    <script type="text/javascript" src="../../roark/d3.v3/d3.v3.min.js"></script>
+	    <script src="line.js"></script>
+	    <!-- My CSS 
+	    <link href="style.css" rel="stylesheet"> -->
+
+
+	    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!--[if lt IE 9]>
+	      <script src="../../assets/js/html5shiv.js"></script>
+	      <script src="../../assets/js/respond.min.js"></script>
+	    <![endif]-->
+    <style type="text/css">
+
+		#example {
+		  margin-left: -20px;
+		}
+
+		.line {
+		  fill: none;
+		  stroke: #000;
+		  stroke-width: 1.5px; 
+		}
+
+		.area {
+		  fill: #969696;
+		}
+
+		.attention {
+		  background: yellow;
+		  margin: -4px;
+		  padding: 4px;
+		}
+
+    </style>
+  	</head>
+  	<body>
+
+  	<p id="example">
+
+  	<script type="text/javascript">
+
+  	var formatDate = d3.time.format("%b %Y");
+
+  	var chart = timeSeriesChart()
+    	.x(function(d) { return formatDate.parse(d.date); })
+    	.y1(function(d) { return +d.price; })
+    	.y0(function(d) {return +d.low; })
+    	.y(function(d) {return +d.line; })
+    	.cx(function(d) { return formatDate.parse(d.date); })
+    	.cy(function(d) {return +d.line; });
+    	//.cx(function(d) { return formatDate.parse(d.date); })
+    	//.cy(function(d) {return +d.line; })
+
+    //var circlechart = circleSeriesChart()
+    //	.cx(function(d) { return formatDate.parse(d.date); })
+    //	.cy(function(d) {return +d.line; })
+    	//.cx(function(d) { return formatDate.parse(d.date); })
+
+
+    d3.csv("../sp500area01.csv", function(data) {
+    	d3.csv("../sp500area02.csv", function(datatwo) {
+	  		
+	  		d3.select("#example")
+	      		.datum(data)
+	      		.call(chart);
+
+			console.log(datatwo)
+	      	setTimeout(function () {
+		    	d3.select("#example")
+		      		.datum(datatwo)
+		      		.call(chart)
+			}, 3000);
+			
+	    })
+	});
+
+  	</script>
+
+    <!-- JavaScript
+    ================================================== -->
+    
+  	</body>
+  </html>

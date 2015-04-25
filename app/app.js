@@ -1,0 +1,1 @@
+var app = angular.module("myApp", ['ngTable','ui.select2','ui.bootstrap','ui-rangeSlider']);
